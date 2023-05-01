@@ -1,0 +1,3 @@
+string = "Hello world" # назначили переменную string и вписали в неё значение "Hello world"
+if string == "Hello world": # если переменная равняется "Hello world", то...
+    print(string) # печатается "Hello world"
