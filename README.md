@@ -8,7 +8,9 @@
 
 bash
 Copy code
-git clone https://github.com/your-username/your-repository.git
+`
+git clone https://github.com/Reyquazar/pyTelegramBotCommercialProperty.git
+`
 Установите зависимости, выполнив команду:
 
 Copy code
