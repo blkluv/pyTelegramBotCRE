@@ -6,11 +6,9 @@
 
 Клонируйте репозиторий с помощью команды:
 
-bash
-Copy code
-`
+```
 git clone https://github.com/Reyquazar/pyTelegramBotCommercialProperty.git
-`
+```
 Установите зависимости, выполнив команду:
 
 Copy code
