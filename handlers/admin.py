@@ -5,6 +5,7 @@ from aiogram.dispatcher.filters import Text
 from data_base import sqlite_db as db
 from keyboards import client_kb
 
+
 class FSMAdmin(StatesGroup):
     photo = State()
     name = State()
@@ -14,7 +15,6 @@ class FSMAdmin(StatesGroup):
     nomer = State()
 
 
-# @dp.message_handler(commands='Загрузить', state=None)
 async def cm_start(message: types.Message):
     await FSMAdmin.photo.set()
     await message.reply('Загрузите фото\nЧтобы вернуться пропишите "Отмена"', reply_markup=client_kb.main_menu2)
@@ -28,7 +28,6 @@ async def cancel_handler(message: types.Message, state: FSMContext):
     await message.reply('Отмена регистрации')
 
 
-# @dp.message_handler(content_types=['photo'], state=FSMAdmin.photo)
 async def load_photo(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data['photo'] = message.photo[0].file_id
@@ -36,7 +35,6 @@ async def load_photo(message: types.Message, state: FSMContext):
     await message.reply('Теперь введите категорию')
 
 
-# @dp.message_handler(state=FSMAdmin.name)
 async def load_name(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data['name'] = message.text
@@ -44,7 +42,6 @@ async def load_name(message: types.Message, state: FSMContext):
     await message.reply('Введи описание')
 
 
-# @dp.message_handler(state=FSMAdmin.description)
 async def load_description(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data['description'] = message.text
@@ -52,7 +49,6 @@ async def load_description(message: types.Message, state: FSMContext):
     await message.reply('Укажи цену')
 
 
-# @dp.message_handler(state=FSMAdmin.price)
 async def load_price(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data['price'] = float(message.text)
@@ -65,6 +61,7 @@ async def load_god_potok(message: types.Message, state: FSMContext):
         data['potok'] = message.text
     await FSMAdmin.next()
     await message.reply('Введите ваш номер телефона')
+
 
 async def load_nomer(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
@@ -84,4 +81,3 @@ def register_handlers_admin(dp: Dispatcher):
     dp.register_message_handler(load_price, state=FSMAdmin.price)
     dp.register_message_handler(load_god_potok, state=FSMAdmin.potok)
     dp.register_message_handler(load_nomer, state=FSMAdmin.nomer)
-
