@@ -62,3 +62,4 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(vernutkb, text='Cancel')
     dp.register_message_handler(profitability, text='How is profitability calculated?')
     dp.register_message_handler(menu, text='Buy')
+
