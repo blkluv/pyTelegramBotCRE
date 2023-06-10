@@ -5,7 +5,7 @@ from data_base import sqlite_db as db
 
 
 async def on_startup(_):
-    print('Бот запущен\nЕго ключ: 1656629638:AAGbYjZJ8cuS5JBoNJOPQvEkjtx_U54m5Xo\n@HaoBot')
+    print('Bot started\nIts key: 6126829707:AAG7JSPYFw0_2x4IqbIAgxHe75Dr4d_sUbA\nCREBrokerBot')
     db.sql_start()
 
 client.register_handlers_client(dp)

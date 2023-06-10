@@ -5,5 +5,5 @@ from aiogram import Bot
 storage = MemoryStorage()
 
 
-bot = Bot(token='1656629638:AAGbYjZJ8cuS5JBoNJOPQvEkjtx_U54m5Xo')
+bot = Bot(token='6126829707:AAG7JSPYFw0_2x4IqbIAgxHe75Dr4d_sUbA')
 dp = Dispatcher(bot, storage=storage)
